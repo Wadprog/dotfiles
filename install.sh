@@ -18,6 +18,7 @@ brew install --cask alacritty docker
 # --- Copy configuration files ---
 echo "Copying configuration files..." 
 mkdir -p ~/.config/alacritty 
+cp ./.logo.txt ~/.logo.txt
 cp -r ./config/alacritty/alacritty.toml ~/.config/alacritty/
 cp .zshrc ~/ 
 
