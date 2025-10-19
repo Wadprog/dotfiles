@@ -4,9 +4,11 @@
 #
 # Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
+# Display logo if it exists
+[[ -f ~/.logo.txt ]] && cat ~/.logo.txt
+
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
 # You can manually run `z4h update` to update everything.
-cat ~/.logo.txt
 zstyle ':z4h:' auto-update      'no'
 # Ask whether to auto-update this often; has no effect if auto-update is 'no'.
 zstyle ':z4h:' auto-update-days '28'
@@ -109,7 +111,6 @@ source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-PROMPT='%F{33} %F{208}→ %f%~ %# '
 
 
 export PATH="/Volumes/MacD/npm-global/bin:$PATH"
