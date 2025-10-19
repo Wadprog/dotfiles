@@ -1,0 +1,58 @@
+[window]
+opacity = 0.7
+decorations = "buttonless"
+startup_mode = "Windowed"
+padding.y = 10
+padding.x = 10
+blur = true
+
+[font]
+normal.family = "MesloLGS Nerd Font"
+size = 16.0
+
+# 🌙 Primary background and text
+[colors.primary]
+background = "0x0b0e12"   # deep charcoal blue-gray
+foreground = "0xf5f7fa"   # soft white text
+
+# 💡 Cursor with warm glow
+[colors.cursor]
+text = "0x0b0e12"
+cursor = "0xfd9607"       # glowing orange cursor
+
+# 🌈 Normal colors — mellow blue/orange harmony
+[colors.normal]
+black   = "0x0b0e12"
+red     = "0xfd5e3a"      # warm red-orange
+green   = "0x4fdba4"      # teal accent to balance blue/orange
+yellow  = "0xfd9607"      # your warm brand orange
+blue    = "0x017cdb"      # your cool brand blue
+magenta = "0x9c6bff"      # soft purple complement
+cyan    = "0x33b8e3"      # light blue bridge tone
+white   = "0xf5f7fa"
+
+# 🌤 Bright colors — subtle glow effect
+[colors.bright]
+black   = "0x141820"
+red     = "0xff7043"
+green   = "0x6ee7b7"
+yellow  = "0xffb84a"
+blue    = "0x2a9df4"
+magenta = "0xb18cff"
+cyan    = "0x5fd7ff"
+white   = "0xffffff"
+
+# 🔵 Selection and accents
+[colors.selection]
+text = "0x0b0e12"
+background = "0x017cdb"
+
+# 🧭 Cursor and footer style
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[colors.footer_bar]
+background = "0x017cdb"
+foreground = "0xfefefe"
+
