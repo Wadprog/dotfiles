@@ -22,7 +22,6 @@ brew "jq"               # JSON processor
 brew "gh"               # GitHub CLI
 
 # Development Tools
-brew "docker"
 brew "docker-compose"
 
 # Fonts
@@ -31,7 +30,7 @@ cask "font-meslo-lg-nerd-font"
 # Applications
 cask "alacritty"        # Terminal emulator
 cask "visual-studio-code"
-cask "docker"
+cask "docker-desktop"
 
 # Optional: Uncomment if needed
 # cask "google-chrome"

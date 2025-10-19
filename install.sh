@@ -60,8 +60,8 @@ fi
 # --- Install packages ---
 if [ -f "$DOTFILES_DIR/Brewfile" ]; then
     log_info "Installing packages from Brewfile..."
-    # brew bundle automatically skips already installed packages
-    brew bundle --file="$DOTFILES_DIR/Brewfile"
+    # brew bundle with --no-upgrade skips already installed packages and won't upgrade them
+    brew bundle --no-upgrade --file="$DOTFILES_DIR/Brewfile"
     log_success "Package installation completed"
 else
     log_info "No Brewfile found, installing core tools manually..."
