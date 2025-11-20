@@ -25,10 +25,11 @@ brew "gh"               # GitHub CLI
 brew "docker-compose"
 
 # Fonts
+cask "font-fira-code-nerd-font"
 cask "font-meslo-lg-nerd-font"
 
 # Applications
-cask "alacritty"        # Terminal emulator
+cask "wezterm"          # Terminal emulator
 cask "visual-studio-code"
 cask "docker-desktop"
 

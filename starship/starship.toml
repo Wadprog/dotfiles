@@ -1,0 +1,77 @@
+palette = "webvitals"
+
+format="""
+[░▒▓](primary_blue)\
+$directory\
+[](fg:bright_blue bg:dark)\
+$git_branch\
+[](fg:dark bg:amber)\
+$git_status\
+[](fg:amber)\
+$fill\
+$lua\ 
+$python\
+$nodejs\
+$aws\
+$docker_context\
+$jobs\
+$cmd_duration\
+[▓▒░](primary_blue)\
+$line_break\
+$character
+"""
+
+
+[fill]
+symbol= ' '
+
+[nodejs]
+symbol = '󰎙'
+style = 'bold red'
+format = ' [$symbol $version](bold green) '   
+version_format = '@${major}.${minor}⇡'
+
+[aws]
+symbol = ' ' 
+style = "fg:amber bg:bright_blue" 
+force_display=true 
+format = '[$symbol($profile )(\[$duration\])]($style)'
+
+[directory]
+style = "fg:amber bg:bright_blue" 
+truncation_length = 3 
+truncation_symbol = '../' 
+
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+
+[git_branch]
+style = 'fg:green'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
+
+[git_status]
+style = "bg:green"
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
+
+[character]
+success_symbol = '[](amber)'
+
+[palettes.webvitals]
+primary_blue = "#1E40AF"
+bright_blue = "#3B82F6"
+light_blue = "#60A5FA"
+amber = "#FD9607"
+dark = "#1F2937"
+light = "#F3F4F6"
+white = "#FFFFFF"
