@@ -4,12 +4,11 @@ format="""
 [░▒▓](primary_blue)\
 $directory\
 [](fg:bright_blue bg:dark)\
-$git_branch\
 [](fg:dark bg:amber)\
 $git_status\
 [](fg:amber)\
 $fill\
-$lua\ 
+$lua\
 $python\
 $nodejs\
 $aws\
@@ -28,19 +27,19 @@ symbol= ' '
 [nodejs]
 symbol = '󰎙'
 style = 'bold red'
-format = ' [$symbol $version](bold green) '   
+format = ' [$symbol $version](bold green) '
 version_format = '@${major}.${minor}⇡'
 
 [aws]
-symbol = ' ' 
-style = "fg:amber bg:bright_blue" 
-force_display=true 
+symbol = ' '
+style = "fg:amber bg:bright_blue"
+force_display=true
 format = '[$symbol($profile )(\[$duration\])]($style)'
 
 [directory]
-style = "fg:amber bg:bright_blue" 
-truncation_length = 3 
-truncation_symbol = '../' 
+style = "fg:amber bg:bright_blue"
+truncation_length = 3
+truncation_symbol = '../'
 
 [directory.substitutions]
 'Documents' = '󰈙'
