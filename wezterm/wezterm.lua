@@ -1,18 +1,14 @@
-local wezterm = require ('wezterm')
+local wezterm = require('wezterm')
 
-config = wezterm.config_builder()
+local config = wezterm.config_builder()
 
-config = {
-
-    automatically_reload_config = true,
-    font_size = 16.0,
-    enable_scroll_bar = false,
-    enable_tab_bar = false,
-    window_close_confirmation = 'NeverPrompt',
-    window_decorations= 'RESIZE',
-    color_scheme = 'Batman'
-
-}
-
+config.automatically_reload_config = true
+config.font = wezterm.font('FiraCode Nerd Font Mono')
+config.font_size = 16.0
+config.enable_scroll_bar = false
+config.enable_tab_bar = false
+config.window_close_confirmation = 'NeverPrompt'
+config.window_decorations = 'RESIZE'
+config.color_scheme = 'Batman'
 
 return config
