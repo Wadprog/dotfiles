@@ -43,3 +43,6 @@ private/
 
 # Homebrew Bundle lockfile
 Brewfile.lock.json
+
+# VS Code - Generated from template
+vscode/settings.json

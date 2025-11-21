@@ -192,8 +192,8 @@
     },
     "material-icon-theme.saturation": 0,
     "vscode_custom_css.imports": [
-        "file:///Users/wadsonvaval/Library/Application Support/Code/User/custom-vscode.css",
-        "file:///Users/wadsonvaval/Library/Application Support/Code/User/vscode-script.js"
+        "file://{{HOME}}/Library/Application Support/Code/User/custom-vscode.css",
+        "file://{{HOME}}/Library/Application Support/Code/User/vscode-script.js"
     ],
     "workbench.colorTheme": "React Theme",
     "workbench.iconTheme": "eq-material-theme-icons-light",

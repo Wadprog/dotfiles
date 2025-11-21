@@ -45,6 +45,14 @@ info "Adding .hushlogin to suppress login messages..."
 touch ~/.hushlogin
 
 printf "\n"
+info "===================="
+info "VS Code Configuration"
+info "===================="
+
+chmod +x ./scripts/vscode-setup.sh
+./scripts/vscode-setup.sh
+
+printf "\n"
 info "==================="
 info "Symbolic Links Setup"
 info "==================="
