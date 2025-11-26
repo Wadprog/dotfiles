@@ -23,6 +23,9 @@ export VISUAL="code --wait"
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
 export PATH="/usr/local/bin:$PATH"
 
+# Add user's local bin directory for custom scripts
+export PATH="$HOME/.local/bin:$PATH"
+
 # Set LDFLAGS environment variable for the linker to use the specified directories for library files.
 # This is useful when building software that depends on non-standard library locations, like zlib and bzip2 in this case.
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"

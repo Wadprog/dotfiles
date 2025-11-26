@@ -22,6 +22,40 @@ setup_vscode_settings() {
     success "Generated settings.json (will be symlinked by symlink script)"
 }
 
+install_vscode_extensions() {
+    local extensions_file="$SCRIPT_DIR/../vscode/extensions.txt"
+
+    info "Installing VS Code extensions..."
+
+    # Check if extensions file exists
+    if [ ! -f "$extensions_file" ]; then
+        error "Extensions file not found: $extensions_file"
+        return 1
+    fi
+
+    # Check if code command is available
+    if ! command -v code &> /dev/null; then
+        error "VS Code 'code' command not found. Please install VS Code first."
+        return 1
+    fi
+
+    # Read extensions file and install each extension
+    while IFS= read -r extension || [ -n "$extension" ]; do
+        # Skip empty lines and comments
+        [[ -z "$extension" || "$extension" =~ ^# ]] && continue
+
+        info "Installing extension: $extension"
+        code --install-extension "$extension" --force
+    done < "$extensions_file"
+
+    success "VS Code extensions installation completed!"
+}
+
 if [ "$(basename "$0")" = "$(basename "${BASH_SOURCE[0]}")" ]; then
     setup_vscode_settings
+    printf "\n"
+    read -p "Install VS Code extensions? [y/n] " install_extensions
+    if [[ "$install_extensions" == "y" ]]; then
+        install_vscode_extensions
+    fi
 fi

@@ -1,0 +1,34 @@
+# VS Code Extensions
+# This file contains a list of VS Code extensions to be installed
+# Install all extensions with: cat extensions.txt | grep -v '^#' | xargs -L 1 code --install-extension
+
+aaron-bond.better-comments
+adpyke.codesnap
+andrewberty.noir-theme-bundle
+anthropic.claude-code
+be5invis.vscode-custom-css
+dbaeumer.vscode-eslint
+docker.docker
+eamodio.gitlens
+editorconfig.editorconfig
+esbenp.prettier-vscode
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+github.codespaces
+github.copilot
+github.copilot-chat
+github.github-vscode-theme
+github.vscode-github-actions
+github.vscode-pull-request-github
+graphql.vscode-graphql
+graphql.vscode-graphql-syntax
+ms-azuretools.vscode-containers
+ms-azuretools.vscode-docker
+ms-vscode-remote.remote-containers
+ms-vscode.cpptools-themes
+ms-vscode.vscode-speech
+richardluo.frosted-glass-theme
+rimuruchan.vscode-fix-checksums-next
+ritwickdey.liveserver
+s-nlf-fh.glassit
+streetsidesoftware.code-spell-checker
