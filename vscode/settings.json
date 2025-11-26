@@ -43,12 +43,11 @@
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
 
     // Typography
-    "editor.fontFamily": "FiraCode Nerd Font Mono, Fira Code, Geist Mono, JetBrains Mono",
-    "editor.suggestFontSize": 18,
+    "editor.fontFamily": "Fira Code, Geist Mono, JetBrains Mono",
+    "editor.suggestFontSize": 16,
     "editor.suggestLineHeight": 30,
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.lineHeight": 1.5,
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
 
     "search.useIgnoreFiles": false,
     "search.exclude": {
