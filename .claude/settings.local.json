@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Bash(echo:*)",
+      "Bash(./scripts/symlink.sh:*)",
+      "Bash(~/.local/bin/update-extension-list:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
