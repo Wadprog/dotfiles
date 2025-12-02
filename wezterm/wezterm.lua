@@ -11,4 +11,5 @@ config.window_close_confirmation = 'NeverPrompt'
 config.window_decorations = 'RESIZE'
 config.color_scheme = 'Batman'
 
+
 return config
