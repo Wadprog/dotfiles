@@ -124,11 +124,7 @@ git_commit_and_push() {
 
     # Stage and commit
     git add "$BREWFILE"
-    git commit -m "installed $package
-
-Generated with [sentanize](dotfiles/scripts/sentanize)
-
-Co-Authored-By: Claude <noreply@anthropic.com>"
+    git commit -m "installed $package"
 
     if [ $? -ne 0 ]; then
         error "Failed to create commit"
