@@ -20,6 +20,7 @@ brew "tree"             # Directory tree viewer
 brew "nvm"              # Node version manager
 brew "jq"               # JSON processor
 brew "gh"               # GitHub CLI
+brew "yazi"             # Terminal file manager
 
 # Development Tools
 brew "docker-compose"

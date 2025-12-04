@@ -1,0 +1,246 @@
+#!/bin/bash
+
+# Sentanize - A dotfiles package manager wrapper
+# Installs software via brew, updates Brewfile, commits and pushes changes
+
+# Resolve symlinks to get actual script location
+SOURCE="${BASH_SOURCE[0]}"
+while [ -L "$SOURCE" ]; do
+    DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+DOTFILES_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+BREWFILE="$DOTFILES_DIR/homebrew/Brewfile"
+
+. "$SCRIPT_DIR/utils.sh"
+
+show_help() {
+    cat << EOF
+Usage: sentanize <command> [options] <package-name>
+
+Commands:
+    install     Install a package and add it to Brewfile
+
+Options:
+    --cask      Install as a cask (GUI application)
+    --branch    Create a new branch for this install
+    --no-push   Don't push changes to remote
+    -h, --help  Show this help message
+
+Examples:
+    sentanize install yazi
+    sentanize install --cask raycast
+    sentanize install --branch yazi
+    sentanize install --cask --branch --no-push rectangle
+EOF
+}
+
+add_to_brewfile() {
+    local package=$1
+    local is_cask=$2
+    local comment=$3
+
+    if $is_cask; then
+        # Check if already in Brewfile
+        if grep -q "^cask \"$package\"" "$BREWFILE"; then
+            warning "Package '$package' already in Brewfile"
+            return 1
+        fi
+
+        # Find the Applications section and add the cask
+        if [ -n "$comment" ]; then
+            local entry="cask \"$package\"          # $comment"
+        else
+            local entry="cask \"$package\""
+        fi
+
+        # Add after the last cask entry in Applications section
+        local last_cask_line=$(grep -n "^cask " "$BREWFILE" | tail -1 | cut -d: -f1)
+        if [ -n "$last_cask_line" ]; then
+            sed -i '' "${last_cask_line}a\\
+$entry
+" "$BREWFILE"
+        else
+            echo "$entry" >> "$BREWFILE"
+        fi
+    else
+        # Check if already in Brewfile
+        if grep -q "^brew \"$package\"" "$BREWFILE"; then
+            warning "Package '$package' already in Brewfile"
+            return 1
+        fi
+
+        # Find the CLI Tools section and add the formula
+        if [ -n "$comment" ]; then
+            local entry="brew \"$package\"          # $comment"
+        else
+            local entry="brew \"$package\""
+        fi
+
+        # Add after the last brew entry before cask entries
+        local last_brew_line=$(grep -n "^brew " "$BREWFILE" | tail -1 | cut -d: -f1)
+        if [ -n "$last_brew_line" ]; then
+            sed -i '' "${last_brew_line}a\\
+$entry
+" "$BREWFILE"
+        else
+            # Add after taps section
+            local last_tap_line=$(grep -n "^tap " "$BREWFILE" | tail -1 | cut -d: -f1)
+            if [ -n "$last_tap_line" ]; then
+                sed -i '' "${last_tap_line}a\\
+\\
+$entry
+" "$BREWFILE"
+            else
+                echo "$entry" >> "$BREWFILE"
+            fi
+        fi
+    fi
+
+    return 0
+}
+
+git_commit_and_push() {
+    local package=$1
+    local create_branch=$2
+    local no_push=$3
+
+    cd "$DOTFILES_DIR" || exit 1
+
+    # Check if we're in a git repository
+    if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+        error "Not in a git repository"
+        return 1
+    fi
+
+    # Create branch if requested
+    if $create_branch; then
+        local branch_name="install/$package"
+        info "Creating branch: $branch_name"
+        git checkout -b "$branch_name"
+    fi
+
+    # Stage and commit
+    git add "$BREWFILE"
+    git commit -m "installed $package
+
+Generated with [sentanize](dotfiles/scripts/sentanize)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+
+    if [ $? -ne 0 ]; then
+        error "Failed to create commit"
+        return 1
+    fi
+
+    success "Created commit: installed $package"
+
+    # Push if not disabled
+    if ! $no_push; then
+        info "Pushing to remote..."
+        git push -u origin HEAD
+        if [ $? -eq 0 ]; then
+            success "Pushed to remote"
+        else
+            error "Failed to push to remote"
+            return 1
+        fi
+    else
+        warning "Skipping push (--no-push flag set)"
+    fi
+
+    return 0
+}
+
+install_package() {
+    local package=""
+    local is_cask=false
+    local create_branch=false
+    local no_push=false
+    local comment=""
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            --cask)
+                is_cask=true
+                shift
+                ;;
+            --branch)
+                create_branch=true
+                shift
+                ;;
+            --no-push)
+                no_push=true
+                shift
+                ;;
+            --comment)
+                comment="$2"
+                shift 2
+                ;;
+            -*)
+                error "Unknown option: $1"
+                show_help
+                exit 1
+                ;;
+            *)
+                package="$1"
+                shift
+                ;;
+        esac
+    done
+
+    if [ -z "$package" ]; then
+        error "Package name is required"
+        show_help
+        exit 1
+    fi
+
+    info "Installing $package..."
+
+    # Install via brew
+    if $is_cask; then
+        brew install --cask "$package"
+    else
+        brew install "$package"
+    fi
+
+    if [ $? -ne 0 ]; then
+        error "Failed to install $package"
+        exit 1
+    fi
+
+    success "Installed $package"
+
+    # Add to Brewfile
+    info "Adding $package to Brewfile..."
+    if add_to_brewfile "$package" "$is_cask" "$comment"; then
+        success "Added $package to Brewfile"
+
+        # Commit and push
+        git_commit_and_push "$package" "$create_branch" "$no_push"
+    fi
+}
+
+# Main
+case "${1:-}" in
+    install)
+        shift
+        install_package "$@"
+        ;;
+    -h|--help)
+        show_help
+        ;;
+    "")
+        error "No command provided"
+        show_help
+        exit 1
+        ;;
+    *)
+        error "Unknown command: $1"
+        show_help
+        exit 1
+        ;;
+esac
