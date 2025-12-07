@@ -24,6 +24,7 @@ brew "yazi"             # Terminal file manager
 
 # Development Tools
 brew "docker-compose"
+brew "starship"
 
 # Fonts
 cask "font-fira-code-nerd-font"
