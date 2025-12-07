@@ -28,6 +28,7 @@ brew "starship"         # Replacement for powerLevel 10k
 brew "docker-compose"
 brew "starship"
 brew "zoxide"
+brew "tmux"
 
 # Fonts
 cask "font-fira-code-nerd-font"
