@@ -7,15 +7,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 
-# npm global packages - use external drive if available, otherwise use default
-if [ -d "/Volumes/MacD/npm-global" ]; then
-  export NPM_CONFIG_PREFIX="/Volumes/MacD/npm-global"
-  export PATH="/Volumes/MacD/npm-global/bin:$PATH"
-else
-  export NPM_CONFIG_PREFIX="$HOME/.npm-global"
-  export PATH="$HOME/.npm-global/bin:$PATH"
-fi
-
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"

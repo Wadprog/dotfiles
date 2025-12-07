@@ -21,6 +21,8 @@ brew "nvm"              # Node version manager
 brew "jq"               # JSON processor
 brew "gh"               # GitHub CLI
 brew "yazi"             # Terminal file manager
+brew "zoxide"           # Replacement for cd 
+brew "starship"         # Replacement for powerLevel 10k 
 
 # Development Tools
 brew "docker-compose"

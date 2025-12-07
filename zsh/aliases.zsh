@@ -42,9 +42,9 @@ quick_commit() {
 
 alias gqc='quick_commit'
 alias gqcp='quick_commit push'
-
+alias cd='z'
 # Better ls
-alias ls="eza --all --icons=always"
+alias ls="eza --long --all --icons=always"
 
 # Lazygit
 alias lg="lazygit"
