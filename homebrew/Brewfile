@@ -31,6 +31,7 @@ brew "zoxide"
 brew "tmux"
 brew "pgadmin4"
 brew "awscli"
+brew "gemini-cli"
 
 # Fonts
 cask "font-fira-code-nerd-font"
