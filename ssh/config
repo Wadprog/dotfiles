@@ -1,0 +1,26 @@
+# SSH Configuration for macOS Keychain Integration
+#
+# Purpose:
+# This configuration enables seamless SSH authentication for git operations
+# (push/pull) without repeatedly entering the SSH key passphrase.
+#
+# How it works:
+# - AddKeysToAgent: Automatically adds SSH keys to the ssh-agent when used
+# - UseKeychain: Stores the passphrase securely in macOS Keychain
+# - IdentityFile: Specifies which SSH key to use for authentication
+#
+# Setup Instructions:
+# 1. After installing dotfiles, run the following command ONCE to store your passphrase:
+#    ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+#
+# 2. Enter your passphrase when prompted. It will be stored in macOS Keychain.
+#
+# 3. Future git operations (push/pull) will use the stored passphrase automatically.
+#
+# Note: This configuration applies to all SSH hosts (Host *).
+# You can add specific host configurations below if needed.
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
