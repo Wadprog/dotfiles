@@ -29,6 +29,7 @@ brew "docker-compose"
 brew "starship"
 brew "zoxide"
 brew "tmux"
+brew "pgadmin4"
 
 # Fonts
 cask "font-fira-code-nerd-font"
