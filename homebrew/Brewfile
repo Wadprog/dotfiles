@@ -30,6 +30,7 @@ brew "starship"
 brew "zoxide"
 brew "tmux"
 brew "pgadmin4"
+brew "awscli"
 
 # Fonts
 cask "font-fira-code-nerd-font"
