@@ -32,6 +32,7 @@ brew "tmux"
 brew "pgadmin4"
 brew "awscli"
 brew "gemini-cli"
+brew "beekeeper-studio"
 
 # Fonts
 cask "font-fira-code-nerd-font"
