@@ -196,9 +196,14 @@
         "file:///Users/wadsonvaval/Library/Application Support/Code/User/custom-vscode.css",
         "file:///Users/wadsonvaval/Library/Application Support/Code/User/vscode-script.js"
     ],
-    "workbench.colorTheme": "React Theme",
+    "workbench.colorTheme": "Catppuccin Frappé",
     "workbench.iconTheme": "eq-material-theme-icons-light",
     "workbench.sideBar.location": "left",
     "material-icon-theme.files.color": "#42a5f5",
-    "workbench.tree.enableStickyScroll": false
+    "workbench.tree.enableStickyScroll": false,
+    "cSpell.userWords": [
+        "Catppuccin",
+        "Fira",
+        "wezterm"
+    ]
 }

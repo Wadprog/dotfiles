@@ -35,3 +35,12 @@ fh() {
 
 # zoxide - a better cd command
 eval "$(zoxide init zsh)"
+
+# Splash screen on terminal startup
+# Set DISABLE_SPLASH=1 to disable
+if [[ -z "$DISABLE_SPLASH" && -o interactive ]]; then
+    DOTFILES_DIR="$(cd "$(dirname "${(%):-%x}")/.." && pwd)"
+    if [ -f "$DOTFILES_DIR/scripts/splash.sh" ]; then
+        "$DOTFILES_DIR/scripts/splash.sh"
+    fi
+fi
