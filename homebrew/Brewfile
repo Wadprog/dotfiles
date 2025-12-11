@@ -34,6 +34,7 @@ brew "awscli"
 brew "gemini-cli"
 brew "beekeeper-studio"
 brew "font-shure-tech-mono-nerd-font"
+brew "tableplus"
 
 # Fonts
 cask "font-fira-code-nerd-font"
