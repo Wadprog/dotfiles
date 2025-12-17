@@ -36,6 +36,7 @@ brew "beekeeper-studio"
 brew "font-shure-tech-mono-nerd-font"
 brew "tableplus"
 brew "zed"
+brew "postman"
 
 # Fonts
 cask "font-fira-code-nerd-font"
