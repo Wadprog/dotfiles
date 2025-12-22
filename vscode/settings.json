@@ -21,8 +21,10 @@
     "breadcrumbs.enabled": true,
     "scm.diffDecorations": "none",
     "editor.hover.delay": 1500,
-    "editor.hover.enabled": true,
-    "editor.matchBrackets": "never",
+    "editor.hover.enabled": "on",
+    "editor.matchBrackets": "always",
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.bracketPairsHorizontal": "active",
     "workbench.tips.enabled": false,
     "editor.colorDecorators": false,
     "git.decorations.enabled": false,
@@ -200,10 +202,5 @@
     "workbench.iconTheme": "eq-material-theme-icons-light",
     "workbench.sideBar.location": "left",
     "material-icon-theme.files.color": "#42a5f5",
-    "workbench.tree.enableStickyScroll": false,
-    "cSpell.userWords": [
-        "Catppuccin",
-        "Fira",
-        "wezterm"
-    ]
+    "workbench.tree.enableStickyScroll": false
 }

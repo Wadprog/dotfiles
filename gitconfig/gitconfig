@@ -1,0 +1,16 @@
+# Article on this configuration
+# https://blog.gitbutler.com/how-git-core-devs-configure-git#better-pushing
+[user]
+	name = Wadson Vaval
+	email = vavalson@hotmail
+[init]
+    defaultBranch = main
+[branch]
+    sort = committerdate
+[push]
+    default = simple
+    autoSetupRemote = true
+[help]
+    autocorrect = prompt
+[pull]
+    rebase = false
