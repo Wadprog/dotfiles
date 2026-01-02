@@ -37,6 +37,7 @@ brew "font-shure-tech-mono-nerd-font"
 brew "tableplus"
 brew "zed"
 brew "postman"
+brew "android-studio"
 
 # Fonts
 cask "font-fira-code-nerd-font"
