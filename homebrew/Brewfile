@@ -38,6 +38,7 @@ brew "tableplus"
 brew "zed"
 brew "postman"
 brew "android-studio"
+brew "java"
 
 # Fonts
 cask "font-fira-code-nerd-font"
