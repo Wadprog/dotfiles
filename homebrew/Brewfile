@@ -39,6 +39,7 @@ brew "zed"
 brew "postman"
 brew "android-studio"
 brew "java"
+brew "act"
 
 # Fonts
 cask "font-fira-code-nerd-font"
