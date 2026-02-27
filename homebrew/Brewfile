@@ -41,6 +41,7 @@ brew "android-studio"
 brew "java"
 brew "act"
 brew "wireshark"
+brew "lazygit"
 
 # Fonts
 cask "font-fira-code-nerd-font"
