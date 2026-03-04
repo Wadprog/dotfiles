@@ -42,6 +42,7 @@ brew "java"
 brew "act"
 brew "wireshark"
 brew "lazygit"
+brew "caddy"
 
 # Fonts
 cask "font-fira-code-nerd-font"
