@@ -43,6 +43,7 @@ brew "act"
 brew "wireshark"
 brew "lazygit"
 brew "caddy"
+brew "lynx"
 
 # Fonts
 cask "font-fira-code-nerd-font"
