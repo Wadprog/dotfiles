@@ -44,6 +44,7 @@ brew "wireshark"
 brew "lazygit"
 brew "caddy"
 brew "lynx"
+brew "nmap"
 
 # Fonts
 cask "font-fira-code-nerd-font"
