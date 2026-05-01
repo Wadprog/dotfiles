@@ -45,6 +45,7 @@ brew "lazygit"
 brew "caddy"
 brew "lynx"
 brew "nmap"
+brew "lazydocker"
 
 # Fonts
 cask "font-fira-code-nerd-font"
