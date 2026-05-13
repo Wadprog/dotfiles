@@ -3,6 +3,8 @@
 [user]
 	name = Wadson Vaval
 	email = vavalson@hotmail
+[core]
+    excludesfile = ~/.gitignore_global
 [init]
     defaultBranch = main
 [branch]
@@ -14,3 +16,5 @@
     autocorrect = prompt
 [pull]
     rebase = false
+[url "git@github.com:"]
+    insteadOf = https://github.com/

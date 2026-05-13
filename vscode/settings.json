@@ -202,5 +202,14 @@
     "workbench.iconTheme": "eq-material-theme-icons-light",
     "workbench.sideBar.location": "left",
     "material-icon-theme.files.color": "#42a5f5",
-    "workbench.tree.enableStickyScroll": false
+    "workbench.tree.enableStickyScroll": false,
+    "git.autofetch": true,
+    "cSpell.userWords": [
+        "chatbubble",
+        "viewability"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "redhat.telemetry.enabled": true
 }

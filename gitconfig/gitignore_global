@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Claude / AI tooling
+.claude/
+CLAUDE.local.md
+.aider*
+.agents/
+.ai/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
