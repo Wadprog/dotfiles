@@ -47,6 +47,7 @@ brew "lynx"
 brew "nmap"
 brew "lazydocker"
 brew "warp"
+brew "multipass"
 
 # Fonts
 cask "font-fira-code-nerd-font"
