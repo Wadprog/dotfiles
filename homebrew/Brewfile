@@ -49,6 +49,7 @@ brew "lazydocker"
 brew "warp"
 brew "multipass"
 brew "floci-io/floci/floci"
+brew "fluidvoice"
 
 # Fonts
 cask "font-fira-code-nerd-font"
