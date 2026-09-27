@@ -50,6 +50,7 @@ brew "warp"
 brew "multipass"
 brew "floci-io/floci/floci"
 brew "fluidvoice"
+brew "blender"
 
 # Fonts
 cask "font-fira-code-nerd-font"
