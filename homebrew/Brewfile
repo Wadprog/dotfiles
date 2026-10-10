@@ -60,6 +60,7 @@ cask "font-meslo-lg-nerd-font"
 cask "wezterm"          # Terminal emulator
 cask "visual-studio-code"
 cask "docker-desktop"
+cask "vorssaint"
 
 # Optional: Uncomment if needed
 # cask "google-chrome"
