@@ -51,6 +51,7 @@ brew "multipass"
 brew "floci-io/floci/floci"
 brew "fluidvoice"
 brew "blender"
+brew "semgrep"
 
 # Fonts
 cask "font-fira-code-nerd-font"
