@@ -52,6 +52,7 @@ brew "floci-io/floci/floci"
 brew "fluidvoice"
 brew "blender"
 brew "semgrep"
+brew "speedtest-cli"
 
 # Fonts
 cask "font-fira-code-nerd-font"
